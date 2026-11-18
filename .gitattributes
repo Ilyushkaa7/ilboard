@@ -1,0 +1,4 @@
+dist/vendor/pyodide/* -text
+*.cmd text eol=crlf
+*.py text eol=lf
+*.ilpy text eol=lf

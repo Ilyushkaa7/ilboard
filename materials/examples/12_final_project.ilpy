@@ -1,0 +1,32 @@
+from ilboard import Board, sleep
+import random
+import time
+
+main = Board("main", size=10)
+scoreboard = Board("board2", size=10)
+score = 0
+
+# Игра на реакцию. Нажми ту кнопку, которую показывает плата.
+# Измени правила и оформление для собственного проекта.
+for round_number in range(5):
+    main.clear()
+    scoreboard.number(score, "#2563eb")
+    while main.button("A") or main.button("B"):
+        sleep(0.02)
+    sleep(random.uniform(0.5, 1.5))
+    target = random.choice(["A", "B"])
+    main.text(target, "#2563eb")
+    start = time.monotonic()
+    while not main.button("A") and not main.button("B"):
+        if time.monotonic() - start > 4:
+            break
+        sleep(0.02)
+    if main.button(target):
+        score = score + 1
+        main.text("♥", "#22c55e")
+    else:
+        main.text("X", "#ef4444")
+    scoreboard.number(score, "#2563eb")
+    sleep(0.7)
+
+main.scroll("СЧЁТ " + str(score), speed=0.08)

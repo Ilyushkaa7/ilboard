@@ -1,0 +1,14 @@
+from ilboard import Board, sleep
+
+main = Board("main", size=10)
+colors = ["#2563eb", "#8b5cf6", "#ef4444"]
+frames = [
+    ["00100", "01110", "11111", "00100", "00100"],
+    ["00100", "00110", "11111", "00110", "00100"],
+    ["00100", "00100", "11111", "01110", "00100"],
+]
+
+while True:
+    for frame, color in zip(frames, colors):
+        main.show(frame, color)
+        sleep(0.5)

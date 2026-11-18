@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.jpg
+.openai/
+*.zip
+!dist/vendor/pyodide/python_stdlib.zip
+*.tar.gz
+.env
+.env.*

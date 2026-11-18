@@ -1,0 +1,13 @@
+from ilboard import Board, sleep
+
+main = Board("main", size=10)
+warm = "#f97316"
+cold = "#2563eb"
+delay = 1
+
+main.fill(warm)
+sleep(delay)
+main.fill(cold)
+sleep(delay)
+main.brightness(50)
+main.text("А", cold)

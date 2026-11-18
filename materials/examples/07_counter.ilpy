@@ -1,0 +1,15 @@
+from ilboard import Board, sleep
+
+main = Board("main", size=10)
+count = 0
+was_a = False
+
+while True:
+    pressed_a = main.button("A")
+    if pressed_a and not was_a:
+        count = min(99, count + 1)
+    if main.button("B"):
+        count = 0
+    was_a = pressed_a
+    main.number(count, "#2563eb")
+    sleep(0.03)

@@ -1,0 +1,12 @@
+from ilboard import Board
+
+main = Board("main", size=10)
+main.clear()
+main.pixel(2, 2, "#2563eb")
+main.pixel(7, 2, "#2563eb")
+main.pixel(2, 6, "#22c55e")
+main.pixel(3, 7, "#22c55e")
+main.pixel(4, 7, "#22c55e")
+main.pixel(5, 7, "#22c55e")
+main.pixel(6, 7, "#22c55e")
+main.pixel(7, 6, "#22c55e")

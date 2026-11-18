@@ -1,0 +1,15 @@
+from ilboard import Board, sleep
+
+main = Board("main", size=10)
+
+while True:
+    temperature = round(main.temperature())
+    if main.distance() < 25:
+        color = "#ef4444"
+    elif temperature > 30:
+        color = "#f97316"
+    else:
+        color = "#2563eb"
+    main.brightness(main.light())
+    main.number(temperature, color)
+    sleep(0.1)

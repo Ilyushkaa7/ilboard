@@ -1,0 +1,16 @@
+from ilboard import Board, sleep
+
+main = Board("main", size=10)
+
+def cross(board, color):
+    board.clear()
+    middle = board.size // 2
+    for i in range(board.size):
+        board.pixel(i, middle, color)
+        board.pixel(middle, i, color)
+
+cross(main, "#2563eb")
+sleep(1)
+cross(main, "#ef4444")
+sleep(1)
+cross(main, "#22c55e")

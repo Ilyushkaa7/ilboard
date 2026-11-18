@@ -1,0 +1,26 @@
+from ilboard import Board, sleep
+import random
+
+main = Board("main", size=10)
+target = random.randrange(main.size)
+cursor = 0
+was_a = False
+was_b = False
+
+while True:
+    a = main.button("A")
+    b = main.button("B")
+    if a and not was_a:
+        cursor = (cursor + 1) % main.size
+    if b and not was_b:
+        if cursor == target:
+            main.text("♥", "#22c55e")
+            target = random.randrange(main.size)
+        else:
+            main.text("X", "#ef4444")
+        sleep(0.7)
+    was_a, was_b = a, b
+    main.clear()
+    main.pixel(target, 1, "#f59e0b")
+    main.pixel(cursor, main.size - 2, "#2563eb")
+    sleep(0.03)

@@ -1,0 +1,14 @@
+from ilboard import Board, sleep
+
+main = Board("main", size=10)
+main.clear()
+
+for x in range(main.size):
+    main.clear()
+    main.pixel(x, 4, "#2563eb")
+    sleep(0.15)
+
+for y in range(main.size):
+    for x in range(main.size):
+        main.pixel(x, y, "#22c55e")
+    sleep(0.08)

@@ -1,0 +1,14 @@
+from ilboard import Board, sleep
+
+main = Board("main", size=10)
+
+while True:
+    if main.button("A") and main.button("B"):
+        main.text("♥", "#8b5cf6")
+    elif main.button("A"):
+        main.text("А", "#2563eb")
+    elif main.button("B"):
+        main.text("Б", "#ef4444")
+    else:
+        main.text("?", "#f59e0b")
+    sleep(0.05)

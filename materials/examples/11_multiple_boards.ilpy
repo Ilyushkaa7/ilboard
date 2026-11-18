@@ -1,0 +1,17 @@
+from ilboard import Board, sleep
+
+main = Board("main", size=10)
+temperature = Board("board2", size=10)
+light = Board("board3", size=10)
+alarm = Board("display", size=10)
+
+while True:
+    temperature.number(round(temperature.temperature()), "#f97316")
+    light.number(round(light.light()), "#2563eb")
+    if alarm.distance() < 25:
+        alarm.text("!", "#ef4444")
+        main.text("!", "#ef4444")
+    else:
+        alarm.text("О", "#22c55e")
+        main.text("♥", "#22c55e")
+    sleep(0.1)

@@ -1,0 +1,10 @@
+from ilboard import Board, sleep
+
+main = Board("main", size=10)
+main.text("1", "#2563eb")
+sleep(1)
+main.text("2", "#8b5cf6")
+sleep(1)
+main.text("3", "#22c55e")
+sleep(1)
+main.text("♥", "#ef4444")
